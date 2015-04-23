@@ -1,0 +1,1 @@
+Random pieces of code that I may find useful in ComputerCraft.
