@@ -1,10 +1,10 @@
-local myEvent = {os.pullEvent("key")}
+local myKeyEvent = {os.pullEvent("key")}
 
 os.queueEvent("dummyEvent")
-local myEvent2 = {os.pullEvent()}
+local myCharEvent2 = {os.pullEvent()}
 
-if myEvent2[1] == "char" then
-    print("Pressed character \""..myEvent2[2].."\".")
+if myCharEvent2[1] == "char" then
+    print("Pressed character \""..myCharEvent2[2].."\".")
 else
-    print("Pressed key \""..keys.getName(myEvent[2]).."\".")
+    print("Pressed key \""..keys.getName(myKeyEvent[2]).."\".")
 end

@@ -3,5 +3,5 @@ if not touchpoint then                                                          
         if not (fs.exists("touchpoint") or fs.exists(shell.resolve("touchpoint"))) then                -- then if the file doesn't exist,
                 shell.run("pastebin get pFHeia96 touchpoint")                                           -- download it to the current folder
                 os.loadAPI(shell.resolve("touchpoint"))                                                 -- then load it.
-        else os.loadAPI(fs.exists("touchpoint") and "touchpoint" or shell.resolve("touchpoint")) end   -- else3 (file exists) load it from root or the current folder, whichever happens to contain it.
+        else os.loadAPI(fs.exists("touchpoint") and "touchpoint" or shell.resolve("touchpoint")) end   -- else (file exists) load it from root or the current folder, whichever happens to contain it.
 end
