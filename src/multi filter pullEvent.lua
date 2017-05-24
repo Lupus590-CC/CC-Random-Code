@@ -8,10 +8,10 @@ local function multiFilterPullEvent(filter,...)
   end
   --#starting a loop, where we will pull events and check them against the filters table
   while true do
-        local event = {os.pullEvent()}
+        local event = table.pack(os.pullEvent())
         for k,v in pairs(filters) do
           if v[1] == event[1] then
-                return unpack(event)
+                return table.unpack(event,1,event.n)
           end
         end
   end
