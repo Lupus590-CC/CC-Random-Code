@@ -1,3 +1,5 @@
+-- Unknown aurthor, please contact me if you know who wrote this and have a link to where
+
 local function multiFilterPullEvent(filter,...)
   -- #Making it to where you can pass a table of filters or just list them as individual args
   local filters
