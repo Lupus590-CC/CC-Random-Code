@@ -2,6 +2,8 @@
 
 local stitch = shell and {} or (_ENV or getfenv()) -- either set things in a table (for dofile/require) or the environment (for os.loadAPI)
 
---define the api here
+-- define the api here
+function stitch.exampleFunc() -- dots are important
+end
 
 return stitch -- if it's dofile this is necessary, if it's loadAPI this does nothing.
