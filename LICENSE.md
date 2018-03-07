@@ -1,5 +1,7 @@
 Unless otherwise stated, these code fragments are relased with the following unlicense. Code from third parties have links to their source, licenses for these snippets should be seeked from the poster and is in this repo for archival purposes.
 
+---
+
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
