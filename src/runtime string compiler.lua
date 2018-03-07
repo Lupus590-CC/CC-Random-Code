@@ -33,6 +33,6 @@ local exampleSource = [[
   print("Example: "..table.concat({...}, " "))
 ]]
 
-local exampleFunc = compile(exampleSource)
+local exampleFunc = compile(exampleSource) -- exampleFunc is now like any normal function as if we had it written in this file normally, the string (exampleSource) is still available for trasmitting/writng to files/etc.
 
 exampleFunc("this", "is", "an", "example") --> "Example: this is an example"
