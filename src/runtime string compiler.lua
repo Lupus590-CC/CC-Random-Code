@@ -35,4 +35,4 @@ local exampleSource = [[
 
 local exampleFunc = compile(exampleSource)
 
-exampleFunc("this", "is", "an", "example")
+exampleFunc("this", "is", "an", "example") --> "Example: this is an example"
