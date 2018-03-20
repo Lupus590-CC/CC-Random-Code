@@ -6,4 +6,4 @@ local stitch = shell and {} or (_ENV or getfenv()) -- either set things in a tab
 function stitch.exampleFunc() -- dots are important
 end
 
-return stitch -- if it's dofile this is necessary, if it's loadAPI this does nothing.
+return stitch -- if it's dofile or require this is necessary, if it's loadAPI this does nothing.
