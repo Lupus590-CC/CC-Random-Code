@@ -13,7 +13,7 @@ local function isDesireableDown()
   return ok and desireables[item.name..":"..item.damage]
 end
 
-local function vainMine()
+local function veinMine()
   for i = 1, 4 do
     if isDesireable() then
       turtle.dig()
