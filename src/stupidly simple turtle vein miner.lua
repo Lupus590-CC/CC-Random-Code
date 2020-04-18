@@ -18,7 +18,7 @@ local function veinMine()
     if isDesireable() then
       turtle.dig()
       turtle.forward()
-      vainMine()
+      veinMine()
       turtle.back()
     end
     turtle.turnRight()
@@ -26,13 +26,13 @@ local function veinMine()
   if isDesireableUp() then
     turtle.digUp()
     turtle.up()
-    vainMine()
+    veinMine()
     turtle.down()
   end
   if isDesireableDown() then
     turtle.digDown()
     turtle.down()
-    vainMine()
+    veinMine()
     turtle.up()
   end
 end
