@@ -4,6 +4,6 @@
     if not dropFunc() then
       print("Output full, waiting "..tostring(sleepTime).." seconds.")
       os.sleep(sleepTime)
-      sleepTime = math.min(sleepTime + math.floor(sleepTime/2) +1, 60)
+      sleepTime = math.min(sleepTime + math.floor(sleepTime/2) +1, maxWaitTime)
     end
   end
