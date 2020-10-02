@@ -1,14 +1,15 @@
-local sleepTime = 0
-  turtle.select(16)
-  while turtle.getItemCount(16) > 0 do
-    if not dropFunc() then
-      local _, y = term.getCursorPos()
-      term.setCursorPos(1, y)
-      sleepTime = math.min(sleepTime + math.floor(sleepTime/2) +1, maxWaitTime)
-      write("Output full, waiting "..tostring(sleepTime).." seconds.")
-      os.sleep(sleepTime)
+local function progressivlyLongerWaitFor(callback, maxWaitTime)
+    if type(callback) ~= "function" then
+        error("bad arg[1], expected function got "..type(callback), 2)
     end
-  end
-  if sleepTime > 0 then
-    print("Continuing")
-  end
+    if maxWaitTime ~= nil and type(maxWaitTime) ~= "number" then
+        error("bad arg[2], expected number or nil got "..type(maxWaitTime), 2)
+    end
+
+    maxWaitTime = maxWaitTime or math.huge
+    local sleepTime = 0
+    while not callback() do
+        sleepTime = math.min(sleepTime + math.floor(sleepTime/2) +1, maxWaitTime)
+        os.sleep(sleepTime)
+    end
+end
