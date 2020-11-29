@@ -36,7 +36,7 @@ Tasks:require "mainBuild" (function(spec)
   end)
 end){
   include = ""..projectName.."/*.lua",
-  startup = ""..projectName.."/launcher.lua",
+  startup = ""..projectName.."/init.lua",
   output = "build/"..projectName..".un.lua",
 }
   :Description "Main build task"
