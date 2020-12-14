@@ -1,3 +1,5 @@
+-- We don't write to our inputs so we also clone a table if it's the only input
+
 local function shallowTableMerge(...)
     -- TODO: arg validaton
     local args = table.pack(...)
