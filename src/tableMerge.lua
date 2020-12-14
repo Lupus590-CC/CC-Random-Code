@@ -16,7 +16,10 @@ local function deepTableMerge(...)
     local merged = {}
     for _, arg in ipairs(args) do
       for k, v in pairs(arg) do
-        merged[k] = v -- TODO: if v is a table then clone the table 
+        if type(v) == table then
+          v = deepTableMerge(v)
+        end
+        merged[k] = v
       end
     end
     return merged
