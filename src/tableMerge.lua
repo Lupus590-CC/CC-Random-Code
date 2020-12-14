@@ -18,7 +18,7 @@ local function deepTableMerge(...)
     local merged = {}
     for _, arg in ipairs(args) do
       for k, v in pairs(arg) do
-        if type(v) == table then
+        if type(v) == "table" then
           v = deepTableMerge(v)
         end
         merged[k] = v
