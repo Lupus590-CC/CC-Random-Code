@@ -1,5 +1,5 @@
 -- loads an API file and returns it like require does
--- compatability is NOT garanteed
+-- compatibility is NOT guaranteed
 
 local expect = require("cc.expect").expect
 
