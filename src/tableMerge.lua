@@ -12,6 +12,7 @@ local function shallowTableMerge(...)
     return merged
   end
 
+-- TODO: handle recursive tables
 local function deepTableMerge(...)
     -- TODO: arg validaton
     local args = table.pack(...)
