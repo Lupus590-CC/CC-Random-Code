@@ -1,4 +1,5 @@
 -- A template Howlfile: https://github.com/SquidDev-CC/Howl
+-- Unlicense Lupus590
 
 local projectName = "remoteShell"
 
