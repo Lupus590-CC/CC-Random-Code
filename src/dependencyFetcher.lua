@@ -1,3 +1,5 @@
+-- a better way of doing this might be soemthing like this https://metis.madefor.cc/
+
 local ccStringsUrl = "https://raw.githubusercontent.com/SquidDev-CC/CC-Tweaked/f7e3e72a6e8653f192b7dfad6cf4d072232e7259/src/main/resources/data/computercraft/lua/rom/modules/main/cc/strings.lua"
 
 if not pcall(require, "cc.strings") then
