@@ -5,12 +5,12 @@ local function shallowTableMerge(...)
     local args = table.pack(...)
     local merged = {}
     for _, arg in ipairs(args) do
-      for k, v in pairs(arg) do
-        merged[k] = v
-      end
+        for k, v in pairs(arg) do
+        	merged[k] = v
+        end
     end
     return merged
-  end
+end
 
 -- TODO: handle recursive tables
 local function deepTableMerge(...)
@@ -18,12 +18,12 @@ local function deepTableMerge(...)
     local args = table.pack(...)
     local merged = {}
     for _, arg in ipairs(args) do
-      for k, v in pairs(arg) do
-        if type(v) == "table" then
-          v = deepTableMerge(v)
+        for k, v in pairs(arg) do
+        	if type(v) == "table" then
+        	    v = deepTableMerge(v)
+        	end
+        	merged[k] = v
         end
-        merged[k] = v
-      end
     end
     return merged
-  end
+end
