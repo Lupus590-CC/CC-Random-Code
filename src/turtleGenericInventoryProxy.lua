@@ -51,7 +51,7 @@ local function psudoGenericPeripheralForSelfTurtle(modem)
       expect.expect(4, toSlot, "number", "nil")
 
       local remote = peripheral.wrap(fromName)
-      if type(remote) ~= "table" type(remote.pushItems) ~= "function" then
+      if type(remote) ~= "table" or type(remote.pushItems) ~= "function" then
         error("remote peripheral is unable to proxy the pull", 2)
       end
 
