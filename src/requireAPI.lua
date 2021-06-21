@@ -5,7 +5,9 @@ local expect = require("cc.expect").expect
 
 local tAPIsLoading = {}
 function requireAPI(_sPath)
-    expect(1, _sPath, "string")
+    expect(1, _sPath, "string")	
+    expect(2, _sPath, "boolean", "nil")
+	
     local sName = fs.getName(_sPath)
     if sName:sub(-4) == ".lua" then
         sName = sName:sub(1, -5)
@@ -16,8 +18,23 @@ function requireAPI(_sPath)
     end
     tAPIsLoading[sName] = true
 
-    local tEnv = {}
-    setmetatable(tEnv, { __index = _G })
+	local shim = setmetatable({}, { __index = _G })	
+	shim.os = setmetatable({
+		loadAPI = function(path)
+			expect(1, path, "string")
+			local sName = fs.getName(_sPath)
+			if sName:sub(-4) == ".lua" then
+				sName = sName:sub(1, -5)
+			end
+			shim[sName] = requireAPI(path)
+			return true
+		end,
+		--[[unloadAPI = function(path)
+			-- TODO: implement properly
+		end]]
+	}, { __index = _G.os })
+	
+    local tEnv = setmetatable({}, shim)
     local fnAPI, err = loadfile(_sPath, nil, tEnv)
     if fnAPI then
         local ok, err = pcall(fnAPI)
