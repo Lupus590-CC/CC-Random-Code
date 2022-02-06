@@ -1,5 +1,9 @@
 local oldPullEvent = os.pullEvent
 os.pullEvent = os.pullEventRaw
+-- replacing the above with shield would be better
+-- https://github.com/Lupus590-CC/CC-Survival-Programs/blob/master/assets/computercraft/lua/rom/modules/main/lupus590/shield.lua
+
+
 local function main()
 	while true do
 		read()
