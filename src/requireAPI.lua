@@ -34,7 +34,7 @@ function requireAPI(_sPath)
 		end]]
 	}, { __index = _G.os })
 	
-    local tEnv = setmetatable({}, shim)
+    local tEnv = setmetatable({}, shim) -- TODO: is this right? should it be setmetatable({}, { __index = shim })?
     local fnAPI, err = loadfile(_sPath, nil, tEnv)
     if fnAPI then
         local ok, err = pcall(fnAPI)
