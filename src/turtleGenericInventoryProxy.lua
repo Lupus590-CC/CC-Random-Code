@@ -22,11 +22,11 @@ local function psudoGenericPeripheralForSelfTurtle(modem)
       return list
     end,
     getItemDetail = function(slot)
-      expect.range(1, slot, 1, 16)
+      expect.range(1, slot, 1, TURTLE_INV_SIZE)
       return turtle.getItemDetail(slot, true)
     end,
     getItemLimit = function(slot)
-      expect.range(1, slot, 1, 16)
+      expect.range(1, slot, 1, TURTLE_INV_SIZE)
       local item = turtle.getItemDetail(slot, true)
       return item and item.maxCount
     end,
