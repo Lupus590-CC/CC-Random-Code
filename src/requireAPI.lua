@@ -6,7 +6,6 @@ local expect = require("cc.expect").expect
 local tAPIsLoading = {}
 function requireAPI(_sPath)
     expect(1, _sPath, "string")	
-    expect(2, _sPath, "boolean", "nil")
 	
     local sName = fs.getName(_sPath)
     if sName:sub(-4) == ".lua" then
